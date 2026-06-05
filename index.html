@@ -50,11 +50,44 @@
             background-image: linear-gradient(to right, rgba(245, 158, 11, 0.03) 1px, transparent 1px),
                               linear-gradient(to bottom, rgba(245, 158, 11, 0.03) 1px, transparent 1px);
         }
-        @media print {
-            .no-print { display: none !important; }
-            body { background: white !important; color: black !important; }
-            .print-card { border: 1px solid #ddd !important; box-shadow: none !important; page-break-inside: avoid; }
+
+
+
+        
+        /* PRINT */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white !important; color: black !important; }
+  .print-card { 
+    border: 1px solid #ddd !important; 
+    box-shadow: none !important; 
+    page-break-inside: avoid; 
+  }
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  header .grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+
+  header .lg\:col-span-5 {
+    display: block !important;
+  }
+
+  header img {
+    width: 100%;
+    max-width: 320px;
+    margin: auto;
+  }
+}
         }
+
+
+
+
+        
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
