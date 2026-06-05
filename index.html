@@ -55,34 +55,57 @@
 
         
         /* PRINT */
-@media print {
-  .no-print { display: none !important; }
-  body { background: white !important; color: black !important; }
-  .print-card { 
-    border: 1px solid #ddd !important; 
-    box-shadow: none !important; 
-    page-break-inside: avoid; 
-  }
-}
-
-/* MOBILE */
 @media (max-width: 900px) {
+
+  /* Stack everything */
   header .grid {
+    display: grid;
     grid-template-columns: 1fr !important;
+    gap: 25px;
     text-align: center;
   }
 
+  /* Fix hero image container */
   header .lg\:col-span-5 {
     display: block !important;
+    width: 100%;
+    margin: 0 auto;
   }
 
+  /* Card styling like your screenshot */
+  header .lg\:col-span-5 > div {
+    max-width: 320px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  /* Image fix (IMPORTANT) */
   header img {
     width: 100%;
-    max-width: 320px;
-    margin: auto;
+    height: 260px; /* fixed height like your design */
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Fix bottom text inside card */
+  header .absolute.bottom-0 {
+    padding: 12px;
+  }
+
+  /* Reduce big spacing */
+  header {
+    padding-top: 100px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* Stats alignment */
+  header .grid-cols-2,
+  header .sm\:grid-cols-3 {
+    justify-items: center;
+    text-align: center;
   }
 }
-        }
 
 
 
